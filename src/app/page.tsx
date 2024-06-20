@@ -61,9 +61,29 @@ export default function Home() {
   }
 
   function UpdateResult() {
-    UpdateRedScore()
-    UpdateBlueScore()
-    UpdateStatus()
+    var red = redDisc * 20
+    red += redPin * 20
+    red += redReverseFlag * 20
+    red += redCube * 50
+    red += (redOwnSideFlag ? 30 : 0)
+    red += (redOpponentFlag ? 50 : 0)
+    red = (red - (redPenalty * 20))
+    setRedScore(red)
+    var blue = blueDisc * 20
+    blue += bluePin * 20
+    blue += blueReverseFlag * 20
+    blue += blueCube * 50
+    blue += (blueOwnSideFlag ? 30 : 0)
+    blue += (blueOpponentFlag ? 50 : 0)
+    blue = (blue - (bluePenalty * 20))
+    setBlueScore(blue)
+    if (blue === red) {
+      setStatus("It's a tie.")
+    } else if (blueScore > redScore) {
+      setStatus("Blue won, by " + (blue - red) + " points.")
+    } else {
+      setStatus("Red won, by " + (red - blue) + " points.")
+    }
   }
   
   return (
