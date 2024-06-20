@@ -67,8 +67,7 @@ export default function Home() {
   }
   
   return (
-    <main className="min-h-screen p-24 bg-stone-950 space-y-5">
-
+    <main className="min-h-screen p-24 bg-stone-950 space-y-5 text-white">
       <div className="flex space-x-2">
         <h1 className="text-5xl">MakeX Score Calculator</h1>
         <h1 className="text-xl">2024-25 Edition</h1>
