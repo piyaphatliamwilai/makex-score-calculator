@@ -14,6 +14,7 @@ export default function Timer() {
     function StartTimer() {
         clearTimeout(timer)
         clearInterval(timer)
+        Timer()
         setTimer(setInterval(Timer, 1000))
     }
 
@@ -37,7 +38,7 @@ export default function Timer() {
 
     function UpdateStatus(min) {
         let seconds = String(min % 60).padStart(2, '0')
-        let minute =  String(Math.max(Math.floor(seconds / 60), 0)).padStart(2, '0')
+        let minute =  String(Math.floor(min / 60)).padStart(2, '0')
         setStatus(minute + ":" + seconds)
     }
 
@@ -94,7 +95,7 @@ export default function Timer() {
                     <button onClick={() => {ChangeStage(1)}} className="p-2 bg-green-700 outline outline-1 outline-green-900 rounded-sm">Manual Stage</button>
                     <button onClick={() => {ChangeStage(2)}} className="p-2 bg-green-700 outline outline-1 outline-green-900 rounded-sm">Modify Stage</button>
                     <button onClick={() => {ChangeStage(3)}} className="p-2 bg-green-700 outline outline-1 outline-green-900 rounded-sm">Final Stage</button>
-                    <Link href={"/"}>
+                    <Link href={"/score"}>
                         <button className="p-2 bg-green-700 outline outline-1 outline-green-900 rounded-sm">Calculate Score</button>
                     </Link>
                 </div>
