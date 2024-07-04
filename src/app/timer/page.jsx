@@ -15,6 +15,7 @@ export default function Timer() {
         clearTimeout(timer)
         clearInterval(timer)
         Timer()
+        Timer()
         setTimer(setInterval(Timer, 1000))
     }
 
@@ -71,6 +72,7 @@ export default function Timer() {
             setStage("Final")
             UpdateStatus(90)
         }
+        setWidth(100)
         ResetTimer()
     }
 

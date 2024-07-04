@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -26,40 +27,6 @@ export default function Home() {
   // Status
   const [status, setStatus] = useState("")
 
-  function UpdateRedScore() {
-    var current_score = redDisc * 20
-    current_score += redPin * 20
-    current_score += redReverseFlag * 20
-    current_score += redCube * 50
-    current_score += (redOwnSideFlag ? 30 : 0)
-    current_score += (redOpponentFlag ? 50 : 0)
-    current_score = (current_score - (redPenalty * 20))
-    setRedScore(current_score)
-    console.log(current_score)
-  }
-
-  function UpdateBlueScore() {
-    var current_score = blueDisc * 20
-    current_score += bluePin * 20
-    current_score += blueReverseFlag * 20
-    current_score += blueCube * 50
-    current_score += (blueOwnSideFlag ? 30 : 0)
-    current_score += (blueOpponentFlag ? 50 : 0)
-    current_score = (current_score - (bluePenalty * 20))
-    setBlueScore(current_score)
-    console.log(current_score)
-  }
-
-  function UpdateStatus() {
-    if (blueScore === redScore) {
-      setStatus("It's a tie.")
-    } else if (blueScore > redScore) {
-      setStatus("Blue won, by " + (blueScore - redScore) + " points.")
-    } else {
-      setStatus("Red won, by " + (redScore - blueScore) + " points.")
-    }
-  }
-
   function UpdateResult() {
     var red = redDisc * 20
     red += redPin * 20
@@ -79,7 +46,7 @@ export default function Home() {
     setBlueScore(blue)
     if (blue === red) {
       setStatus("It's a tie.")
-    } else if (blueScore > redScore) {
+    } else if (blue > red) {
       setStatus("Blue won, by " + (blue - red) + " points.")
     } else {
       setStatus("Red won, by " + (red - blue) + " points.")
@@ -97,6 +64,7 @@ export default function Home() {
         <button className={toggleState === 1 ? " text-white underline hover:text-blue-600" : " text-zinc-400 hover:text-blue-600"} onClick={() => setToggleState(1)}>Red Team</button>
         <button className={toggleState === 2 ? " text-white underline hover:text-blue-600" : " text-zinc-400 hover:text-blue-600"} onClick={() => setToggleState(2)}>Blue Team</button>
         <button className={toggleState === 3 ? " text-white underline hover:text-blue-600" : " text-zinc-400 hover:text-blue-600"} onClick={() => setToggleState(3)}>Calculate</button>
+        <Link href={"/timer"} className="text-zinc-400 hover:underline hover:text-blue-600">Timer</Link>
       </div>
 
       <div className={toggleState === 1 ? "" : "hidden"}>
