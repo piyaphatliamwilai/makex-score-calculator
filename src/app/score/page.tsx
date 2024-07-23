@@ -29,17 +29,17 @@ export default function Home() {
 
   function UpdateResult() {
     var red = redDisc * 20
-    red += redPin * 20
+    red += redPin * 10
     red += redReverseFlag * 20
-    red += redCube * 50
+    red += redCube * 30
     red += (redOwnSideFlag ? 30 : 0)
     red += (redOpponentFlag ? 50 : 0)
     red = (red - (redPenalty * 20))
     setRedScore(red)
     var blue = blueDisc * 20
-    blue += bluePin * 20
+    blue += bluePin * 10
     blue += blueReverseFlag * 20
-    blue += blueCube * 50
+    blue += blueCube * 30
     blue += (blueOwnSideFlag ? 30 : 0)
     blue += (blueOpponentFlag ? 50 : 0)
     blue = (blue - (bluePenalty * 20))
@@ -76,7 +76,7 @@ export default function Home() {
               <input type="number" defaultValue={0} min={0} max={10} id="red-disc" onChange={(value) => setRedDisc(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6">
-              <h1>Pins (20 pts/each)</h1>
+              <h1>Pins (10 pts/each)</h1>
               <input type="number" defaultValue={0} min={0} max={10} id="red-pins" onChange={(value) => setRedPin(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6 items-center">
@@ -84,7 +84,7 @@ export default function Home() {
               <input type="number" defaultValue={0} min={0} max={10} id="red-reverse-flag" onChange={(value) => setRedReverseFlag(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6">
-              <h1>Cube or Cone (50 pts/each)</h1>
+              <h1>Cube or Cone (30 pts/each)</h1>
               <input type="number" defaultValue={0} min={0} max={10} id="red-cubes" onChange={(value) => setRedCube(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6">
@@ -112,7 +112,7 @@ export default function Home() {
               <input type="number" defaultValue={0} min={0} max={10} id="blue-disc" onChange={(value) => setBlueDisc(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6">
-              <h1>Pins (20 pts/each)</h1>
+              <h1>Pins (10 pts/each)</h1>
               <input type="number" defaultValue={0} min={0} max={10} id="blue-pins" onChange={(value) => setBluePin(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6 items-center">
@@ -120,7 +120,7 @@ export default function Home() {
               <input type="number" defaultValue={0} min={0} max={10} id="blue-reverse-flag" onChange={(value) => setBlueReverseFlag(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6">
-              <h1>Cube or Cone (50 pts/each)</h1>
+              <h1>Cube or Cone (30 pts/each)</h1>
               <input type="number" defaultValue={0} min={0} max={10} id="blue-cubes" onChange={(value) => setBlueCube(value.target.valueAsNumber)} className="outline-1 bg-opacity-60 bg-black rounded-sm outline outline-zinc-700 px-2 text-lg"/>
             </div>
             <div className="flex space-x-6">
